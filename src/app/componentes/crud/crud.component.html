@@ -4,7 +4,7 @@
       <div class="card-header">CRUD</div>
       <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let nota of notas" (click)="formNuevo.patchValue(nota)">
+            <li [ngClass]='{"text-white bg-dark":nota.idUser}' class="list-group-item" *ngFor="let nota of notas" (click)="nota.idUser ? formNuevo.patchValue(nota):formNuevo.reset()">
               {{nota.titulo}} : {{nota.contenido}}
             </li>
         </ul>
